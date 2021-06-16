@@ -22,6 +22,11 @@ FROM film;
 SELECT sec_to_time(avg(length)*60) as average_duration 
 FROM film;
 
+SELECT FLOOR(AVG(length)/60), ROUND(AVG(length)%60) as Minutes
+FROM film;
+
+SELECT time_format(sec_to_time(round(avg(length)*60)), '%H:%i') from film;
+
 # How many distinct (different) actors' last names are there?
  
 SELECT COUNT(DISTINCT(last_name))
