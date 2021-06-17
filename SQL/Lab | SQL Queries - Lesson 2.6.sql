@@ -85,13 +85,8 @@ FROM staff;
 
 # I would then insert the ID values into the staff table (to note that i am missing inventory id and that rental_id should be automatically generated)
 
-INSERT INTO `sakila`.`rental`
-(`customer_id`,
-`staff_id`)
-VALUES
-(
-130,
-1);
+INSERT INTO rental(rental_date, inventory_id, customer_id, staff_id)
+VALUES (curdate(), 1, 130, 1);
 
 # Delete non-active users, but first, create a backup table deleted_users to store customer_id, email, and the date for the users that would be deleted. Follow these steps:
 
